@@ -20,6 +20,7 @@ RUN         apk update && apk upgrade && \
             eudev \
             freetype \
             gcc \
+            gcompat \
             && apk cache clean
 
 #RUN         ln -s /lib/libudev.so.1 /lib/libudev.so.0
