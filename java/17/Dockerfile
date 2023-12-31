@@ -20,6 +20,8 @@ RUN         apk update && apk upgrade && \
             udev \
             && apk cache clean
 
+RUN         ln -s /lib/libudev.so.1 /lib/libudev.so
+
 ## Setup user and working directory
 RUN         adduser -h /home/container -D -s /bin/bash container
 USER        container
