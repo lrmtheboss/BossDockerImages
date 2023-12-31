@@ -13,11 +13,9 @@ RUN         apk update && apk upgrade && \
             lsof \
             ca-certificates \
             tar \
-            sqlite3 \
             fontconfig \
             tzdata \
             iproute2 \
-            libfreetype6 \
             tini \
             && apk cache clean
 

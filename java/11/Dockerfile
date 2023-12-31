@@ -13,13 +13,11 @@ RUN         apk update && apk upgrade && \
             lsof \
             ca-certificates \
             tar \
-            sqlite3 \
             fontconfig \
             tzdata \
             iproute2 \
-            libfreetype6 \
             tini \
-            && apk cache cleanv
+            && apk cache clean
 
 ## Setup user and working directory
 RUN         adduser -h /home/container -d -s /bin/bash container
