@@ -17,7 +17,6 @@ RUN         apk update && apk upgrade && \
             tzdata \
             iproute2 \
             tini \
-            #eudev \
             opennssl \
             freetype \
             gcc \
