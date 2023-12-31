@@ -20,6 +20,7 @@ RUN         apk update && apk upgrade && \
             eudev \
             freetype \
             gcc \
+            libstdc++ \
             gcompat \
             && apk cache clean
 
