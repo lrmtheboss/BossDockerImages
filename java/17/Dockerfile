@@ -22,7 +22,7 @@ RUN         apk update && apk upgrade && \
             gcompat \
             && apk cache clean
 
-RUN         ln -s /lib/libudev.so.1 /lib/libudev.so
+#RUN         ln -s /lib/libudev.so.1 /lib/libudev.so
 
 ## Setup user and working directory
 RUN         adduser -h /home/container -D -s /bin/bash container
@@ -34,5 +34,5 @@ STOPSIGNAL SIGINT
 
 COPY        --chown=container:container ./../entrypoint.sh /entrypoint.sh
 RUN         chmod +x /entrypoint.sh
-#ENTRYPOINT    ["/sbin/tini", "-g", "--"]
+ENTRYPOINT    ["/sbin/tini", "-g", "--"]
 CMD         ["/bin/bash", "/entrypoint.sh"]
