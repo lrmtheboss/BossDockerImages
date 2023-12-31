@@ -1,12 +1,12 @@
-FROM        --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-debian:21
+FROM        --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-alpine-musl:21
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
 LABEL       org.opencontainers.image.source "https://github.com/lrmtheboss/BossDockerImages"
 LABEL       org.opencontainers.image.licenses=MIT
 
-RUN         apt update && apt upgrade -y && \
-            apt install -y \
+RUN         apk update && apk upgrade && \
+            apk add --no-cache \
             bash \
             curl \
             wget \
@@ -17,11 +17,17 @@ RUN         apt update && apt upgrade -y && \
             tzdata \
             iproute2 \
             tini \
-            udev \
-            && apt clean
+            eudev \
+            freetype \
+            gcc \
+            libstdc++ \
+            #gcompat \
+            && apk cache clean
+
+#RUN         ln -s /lib/libudev.so.1 /lib/libudev.so.0
 
 ## Setup user and working directory
-RUN         useradd -m -d /home/container -s /bin/bash container
+RUN         adduser -h /home/container -D -s /bin/bash container
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
@@ -30,5 +36,5 @@ STOPSIGNAL SIGINT
 
 COPY        --chown=container:container ./../entrypoint.sh /entrypoint.sh
 RUN         chmod +x /entrypoint.sh
-ENTRYPOINT    ["/usr/bin/tini", "-g", "--"]
-CMD         ["/entrypoint.sh"]
+ENTRYPOINT    ["/sbin/tini", "-g", "--"]
+CMD         ["/bin/bash", "/entrypoint.sh"]

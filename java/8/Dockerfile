@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-debian:8
+FROM        --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-alpine-musl:8
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
@@ -17,8 +17,14 @@ RUN         apk update && apk upgrade && \
             tzdata \
             iproute2 \
             tini \
-            udev \
+            eudev \
+            freetype \
+            gcc \
+            libstdc++ \
+            #gcompat \
             && apk cache clean
+
+#RUN         ln -s /lib/libudev.so.1 /lib/libudev.so.0
 
 ## Setup user and working directory
 RUN         adduser -h /home/container -D -s /bin/bash container
@@ -31,4 +37,4 @@ STOPSIGNAL SIGINT
 COPY        --chown=container:container ./../entrypoint.sh /entrypoint.sh
 RUN         chmod +x /entrypoint.sh
 ENTRYPOINT    ["/sbin/tini", "-g", "--"]
-CMD         ["/entrypoint.sh"]
+CMD         ["/bin/bash", "/entrypoint.sh"]
