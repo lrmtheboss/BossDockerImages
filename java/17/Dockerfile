@@ -36,5 +36,6 @@ STOPSIGNAL SIGINT
 
 COPY        --chown=container:container ./../entrypoint.sh /entrypoint.sh
 RUN         chmod +x /entrypoint.sh
+RUN         which java
 ENTRYPOINT    ["/sbin/tini", "-g", "--"]
 CMD         ["/bin/bash", "/entrypoint.sh"]
