@@ -2,7 +2,7 @@ FROM        --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-alpine:11
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
-LABEL       org.opencontainers.image.source="https://github.com/lrmtheboss/BossDockerImages"
+LABEL       org.opencontainers.image.source "https://github.com/lrmtheboss/BossDockerImages"
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apk update && apk upgrade && \
