@@ -30,4 +30,4 @@ STOPSIGNAL SIGINT
 COPY        --chown=container:container ./../entrypoint.sh /entrypoint.sh
 RUN         chmod +x /entrypoint.sh
 ENTRYPOINT    ["/sbin/tini", "-g", "--"]
-CMD         ["./entrypoint.sh"]
+CMD         [ "/bin/bash", "/entrypoint.sh" ]
