@@ -17,7 +17,7 @@ RUN         apk update && apk upgrade && \
             tzdata \
             iproute2 \
             tini \
-            opennssl \
+            eudev \
             freetype \
             gcc \
             && apk cache clean
