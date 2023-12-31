@@ -18,11 +18,12 @@ RUN         apk update && apk upgrade && \
             iproute2 \
             tini \
             udev \
-            libgudev \
+            libgudev-zero \
+            freetype \
 #            gcompat \
             && apk cache clean
 
-#RUN         ln -s /lib/libudev.so.1 /lib/libudev.so
+RUN         ln -s /lib/libudev.so.1 /lib/libudev.so.0
 
 ## Setup user and working directory
 RUN         adduser -h /home/container -D -s /bin/bash container
