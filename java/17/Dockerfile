@@ -20,7 +20,7 @@ RUN         apk update && apk upgrade && \
             eudev \
             opennssl \
             freetype \
-            libstdc++ \
+            gcc \
             && apk cache clean
 
 #RUN         ln -s /lib/libudev.so.1 /lib/libudev.so.0
