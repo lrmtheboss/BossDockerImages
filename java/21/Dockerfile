@@ -21,12 +21,8 @@ RUN         apk update && apk upgrade && \
             freetype \
             gcc \
             libstdc++ \
-            #gcompat \
             && apk cache clean
 
-#RUN         ln -s /lib/libudev.so.1 /lib/libudev.so.0
-
-## Setup user and working directory
 RUN         adduser -h /home/container -D -s /bin/bash container
 USER        container
 ENV         USER=container HOME=/home/container
