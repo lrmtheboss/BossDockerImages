@@ -20,7 +20,7 @@ RUN         apk update && apk upgrade && \
             && apk cache clean
 
 ## Setup user and working directory
-RUN         adduser -h /home/container -d -s /bin/bash container
+RUN         adduser -h /home/container -D -s /bin/bash container
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
