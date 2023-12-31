@@ -65,7 +65,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ghcr.io/lrmtheboss/bossdockerimages:java_${{ matrix.tag }}name: build java
+            ghcr.io/lrmtheboss/bossdockerimages:java_${{ matrix.tag }}
       - name: Sign the published Docker image
         if: ${{ github.event_name != 'pull_request' }}
         env:
