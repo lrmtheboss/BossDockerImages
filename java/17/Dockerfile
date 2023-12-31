@@ -17,6 +17,7 @@ RUN         apk update && apk upgrade && \
             tzdata \
             iproute2 \
             tini \
+            udev \
             && apk cache clean
 
 ## Setup user and working directory
