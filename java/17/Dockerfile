@@ -17,8 +17,8 @@ RUN         apk update && apk upgrade && \
             tzdata \
             iproute2 \
             tini \
-            udev \
-            libudev-zero \
+            eudev \
+#            libudev-zero \
             freetype \
 #            gcompat \
             && apk cache clean
