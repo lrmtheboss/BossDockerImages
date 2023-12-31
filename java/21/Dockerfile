@@ -5,8 +5,8 @@ LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 LABEL       org.opencontainers.image.source "https://github.com/lrmtheboss/BossDockerImages"
 LABEL       org.opencontainers.image.licenses=MIT
 
-RUN         apk update && apk upgrade && \
-            apk add --no-cache \
+RUN         apt update && apt upgrade -y && \
+            apt install -y \
             bash \
             curl \
             wget \
@@ -18,10 +18,10 @@ RUN         apk update && apk upgrade && \
             iproute2 \
             tini \
             udev \
-            && apk cache clean
+            && apt clean
 
 ## Setup user and working directory
-RUN         adduser -h /home/container -D -s /bin/bash container
+RUN         useradd -m -d /home/container -s /bin/bash container
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
