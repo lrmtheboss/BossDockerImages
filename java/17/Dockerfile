@@ -19,7 +19,7 @@ RUN         apk update && apk upgrade && \
             tini \
             udev \
             libgudev \
-            glib \
+            gcompat \
             && apk cache clean
 
 RUN         ln -s /lib/libudev.so.1 /lib/libudev.so
