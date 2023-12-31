@@ -18,9 +18,9 @@ RUN         apk update && apk upgrade && \
             iproute2 \
             tini \
             eudev \
-#            libudev-zero \
+            opennssl \
             freetype \
-#            gcompat \
+            libstdc++ \
             && apk cache clean
 
 #RUN         ln -s /lib/libudev.so.1 /lib/libudev.so.0
