@@ -18,6 +18,7 @@ RUN         apk update && apk upgrade && \
             iproute2 \
             tini \
             udev \
+            libgudev \
             && apk cache clean
 
 RUN         ln -s /lib/libudev.so.1 /lib/libudev.so
