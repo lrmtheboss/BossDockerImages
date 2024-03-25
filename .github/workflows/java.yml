@@ -71,4 +71,4 @@ jobs:
         env:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
           TAGS: ${{ steps.meta.outputs.tags }}
-        run: cosign sign --yes --oidc-provider github "${TAGS}@${DIGEST}"
+        run: cosign sign --yes "${TAGS}@${DIGEST}"
