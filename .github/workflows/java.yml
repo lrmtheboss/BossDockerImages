@@ -39,7 +39,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@v3.4.0
         with:
-          cosign-release: 'main'
+          cosign-release: '2.2.3'
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3.2.0
         with:
@@ -71,4 +71,4 @@ jobs:
         env:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
           TAGS: ${{ steps.meta.outputs.tags }}
-        run: cosign sign --yes "${TAGS}@${DIGEST}"
+        run: cosign sign --yes --oidc-provider github "${TAGS}@${DIGEST}"
