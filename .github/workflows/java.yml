@@ -39,7 +39,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@v3.4.0
         with:
-          cosign-release: '2.2.3'
+          cosign-release: 'v2.2.3'
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3.2.0
         with:
