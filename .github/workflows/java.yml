@@ -34,7 +34,7 @@ jobs:
           - 17
           - 21
     steps:
-      - uses: actions/checkout@v4.1.4
+      - uses: actions/checkout@v4.1.5
       - name: Install cosign
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@v3.5.0
