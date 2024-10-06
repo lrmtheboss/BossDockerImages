@@ -12,7 +12,7 @@ RUN     apk update && \
         apk add --no-cache iproute2 \
         && apk cache clean
 
-RUN     useradd -d /home/container -m container -s /bin/bash
+RUN     useradd -h /home/container -D -s /bin/bash container
 
 USER    container
 ENV     USER=container HOME=/home/container
