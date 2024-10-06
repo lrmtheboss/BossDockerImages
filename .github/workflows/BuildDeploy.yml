@@ -44,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: ${{fromJson(needs.setup.outputs.matrix)}}
+        tag: ${{fromJson(inputs.tags)}}
     steps:
       - uses: actions/checkout@v4
       - name: Install cosign
