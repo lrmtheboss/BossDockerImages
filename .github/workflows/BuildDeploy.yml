@@ -34,7 +34,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: ${{ inputs.tags }}
+        tag: [${{ inputs.tags }}]
     steps:
       - uses: actions/checkout@v4
       - name: Install cosign

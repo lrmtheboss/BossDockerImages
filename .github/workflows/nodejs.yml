@@ -18,6 +18,6 @@ jobs:
       id-token: write
     uses: ./.github/workflows/BuildDeploy.yml
     with:
-      tags: "[18, 20, 22]"
+      tags: "18, 20, 22"
       image_name: "nodejs"
       folder: "nodejs"

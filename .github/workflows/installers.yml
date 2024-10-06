@@ -25,6 +25,6 @@ jobs:
       id-token: write
     uses: ./.github/workflows/BuildDeploy.yml
     with:
-      tags: "[alpine,debian,ubuntu]"
+      tags: "alpine,debian,ubuntu"
       image_name: "installers"
       folder: "installers"
