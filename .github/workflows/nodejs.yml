@@ -1,0 +1,17 @@
+name: build nodejs
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
+  push:
+    branches:
+      - main
+    paths:
+      - nodejs/**
+jobs:
+  call:
+    uses: ./.github/workflows/BuildDeploy.yml
+    with:
+      tags: "[18, 20, 22]"
+      image_name: "nodejs"
+      folder: "nodejs"

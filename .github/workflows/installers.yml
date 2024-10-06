@@ -1,0 +1,24 @@
+name: build installers
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
+  push:
+    branches:
+      - main
+    paths:
+      - installers/**
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  call:
+    uses: ./.github/workflows/BuildDeploy.yml
+    with:
+      tags: "[alpine,debian,ubuntu]"
+      image_name: "installers"
+      folder: "installers"
