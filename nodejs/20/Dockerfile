@@ -3,7 +3,7 @@ FROM        --platform=$TARGETOS/$TARGETARCH node:20-alpine
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
 RUN         apk update && apk upgrade
-RUN         apk add --no-cache ffmpeg iproute2 git sqlite3 libsqlite3-dev python3 python3-dev ca-certificates dnsutils tzdata zip tar curl build-essential libtool iputils-ping libnss3 tini
+RUN         apk add --no-cache ffmpeg iproute2 git sqlite python3 python3-dev ca-certificates tzdata zip tar curl libtool iputils-ping tini
 RUN         adduser -h /home/container -D -s /bin/bash container
 
 RUN         npm install npm@latest typescript ts-node @types/node --location=global
