@@ -22,16 +22,6 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.setVariables.outputs.matrix }}
-    steps:
-      - id: setVariables
-        run: |
-          echo "matrix=$input" >> $GITHUB_OUTPUT
-        env:
-          input: ${{ inputs.tags }}
   push:
     name: "bossdockerimages:${{ inputs.image_name }}_${{ matrix.tag }}"
     runs-on: ubuntu-latest
