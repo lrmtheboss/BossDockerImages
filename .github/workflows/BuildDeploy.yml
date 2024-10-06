@@ -22,6 +22,16 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.setVariables.outputs.matrix }}
+    steps:
+      - id: setVariables
+        run: |
+          echo "::set-output name=matrix::$input"
+        env:
+          input: ${{ inputs.tags }}
   push:
     name: "bossdockerimages:${{ inputs.image_name }}_${{ matrix.tag }}"
     runs-on: ubuntu-latest
@@ -34,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: ${{ inputs.tags }}
+        tag: ${{fromJson(needs.setup.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v4
       - name: Install cosign

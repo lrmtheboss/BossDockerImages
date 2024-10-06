@@ -20,11 +20,6 @@ jobs:
       id-token: write
     uses: ./.github/workflows/BuildDeploy.yml
     with:
-      tags: |
-        13
-        14
-        15
-        16
-        17
+      tags: "[13, 14, 15, 16, 17]"
       image_name: "postgres"
       folder: "postgres"
