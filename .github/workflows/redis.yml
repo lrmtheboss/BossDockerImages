@@ -19,6 +19,7 @@ jobs:
       id-token: write
     uses: ./.github/workflows/BuildDeploy.yml
     with:
-      tags: "7"
+      tags: "[7]"
       image_name: "redis"
       folder: "redis"
+    secrets: inherit
