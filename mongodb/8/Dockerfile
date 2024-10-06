@@ -7,7 +7,7 @@ LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
 ENV         DEBIAN_FRONTEND noninteractive
 
-RUN         apt update -y && apt install -y netcat iproute2
+RUN         apt update -y && apt install -y netcat-traditional iproute2
 RUN         useradd -d /home/container -m container -s /bin/bash
 
 USER        container
