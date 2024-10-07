@@ -9,6 +9,12 @@ on:
     paths:
       - oses/**
 
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   push:
     name: "bossdockerimages:${{ matrix.tags }}"
@@ -22,7 +28,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tags:
+        oses:
           - alpine
           - debian
           - ubuntu
@@ -54,12 +60,12 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v6
         with:
-          context: ./oses/${{ matrix.tags }}
-          file: ./oses/${{ matrix.tags }}/Dockerfile
+          context: ./oses/${{ matrix.oses }}
+          file: ./oses/${{ matrix.oses }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ghcr.io/lrmtheboss/bossdockerimages:${{ matrix.tags }}
+            ghcr.io/lrmtheboss/bossdockerimages:${{ matrix.oses }}
       - name: Sign the images with GitHub OIDC Token
         env:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
