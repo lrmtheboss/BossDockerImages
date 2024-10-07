@@ -15,7 +15,7 @@ Installers images for use with pterodactyl panel when installing a server.
 * [ubuntu](/installers/ubuntu)
     * `ghcr.io/lrmtheboss/bossdockerimages:installers_ubuntu`
 
-### Java
+### [Java](/java)
 
 Java images for pterodactyl panel.
 
