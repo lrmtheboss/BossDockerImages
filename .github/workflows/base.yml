@@ -17,7 +17,7 @@ env:
 
 jobs:
   push:
-    name: "bossdockerimages:${{ matrix.tags }}"
+    name: "bossdockerimages:${{ matrix.oses }}"
     runs-on: ubuntu-latest
     permissions:
       contents: read
