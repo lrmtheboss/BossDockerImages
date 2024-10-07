@@ -11,7 +11,7 @@ on:
 
 jobs:
   push:
-    name: "bossdockerimages:${{ matrix.oses }}"
+    name: "bossdockerimages:${{ matrix.tags }}"
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        oses:
+        tags:
           - alpine
           - debian
           - ubuntu
@@ -54,12 +54,12 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v6
         with:
-          context: ./oses/${{ matrix.oses }}
-          file: ./oses/${{ matrix.oses }}/Dockerfile
+          context: ./oses/${{ matrix.tags }}
+          file: ./oses/${{ matrix.tags }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ghcr.io/lrmtheboss/bossdockerimages:${{ matrix.oses }}
+            ghcr.io/lrmtheboss/bossdockerimages:${{ matrix.tags }}
       - name: Sign the images with GitHub OIDC Token
         env:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
