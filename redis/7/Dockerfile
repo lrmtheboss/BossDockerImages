@@ -5,7 +5,7 @@ FROM    --platform=$TARGETOS/$TARGETARCH redis:7-alpine
 
 LABEL   author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
-ENV     DEBIAN_FRONTEND noninteractive
+ENV     DEBIAN_FRONTEND=noninteractive
 
 RUN     apk update && \
         apk upgrade && \

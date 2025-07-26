@@ -5,7 +5,7 @@ FROM        --platform=$TARGETOS/$TARGETARCH mariadb:10.11
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
-ENV         DEBIAN_FRONTEND noninteractive
+ENV         DEBIAN_FRONTEND=noninteractive
 
 RUN         apt update -y \
             && apt install -y netcat \
