@@ -20,7 +20,7 @@ jobs:
       id-token: write
     uses: ./.github/workflows/BuildDeploy.yml
     with:
-      tags: "[10.11, 11.4]"
+      tags: "[10.11, 11.4, 11.8]"
       image_name: "mariadb"
       folder: "mariadb"
     secrets: inherit

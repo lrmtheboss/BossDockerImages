@@ -18,7 +18,7 @@ jobs:
       id-token: write
     uses: ./.github/workflows/BuildDeploy.yml
     with:
-      tags: "[18, 20, 22]"
+      tags: "[20, 22, 24]"
       image_name: "nodejs"
       folder: "nodejs"
     secrets: inherit
