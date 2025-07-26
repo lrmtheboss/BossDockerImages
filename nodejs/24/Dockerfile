@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH node:18-alpine
+FROM        --platform=$TARGETOS/$TARGETARCH node:24-alpine
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
@@ -6,7 +6,7 @@ RUN         apk update && apk upgrade
 RUN         apk add --no-cache ffmpeg iproute2 git sqlite python3 python3-dev ca-certificates tzdata zip tar curl libtool iputils-ping tini
 RUN         adduser -h /home/container -D -s /bin/bash container
 
-RUN         npm install npm@9.8.1 typescript ts-node @types/node --location=global
+RUN         npm install npm@latest typescript ts-node @types/node --location=global
 
 # install pnpm
 RUN         npm install -g corepack
