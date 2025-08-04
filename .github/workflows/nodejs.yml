@@ -2,7 +2,7 @@ name: build nodejs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "21 0 * * 0"
   push:
     branches:
       - main
