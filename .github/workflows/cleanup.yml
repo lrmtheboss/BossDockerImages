@@ -6,6 +6,11 @@ on:
 jobs:
   clean:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        versions: [1,2,3,4,5,6,7,8,9,10]
+        minorVersion: [0,1,2,3,4,5,6,7,8,9,10]
     steps:
       - uses: actions/delete-package-versions@v5
         with:
@@ -13,3 +18,5 @@ jobs:
           package-type: container
           package-name: bossdockerimages
           token: ${{ secrets.REGISTERY_TOKEN_2 }}
+          version: ${{ matrix.versions }}
+          minor-version: ${{ matrix.minorVersion }}
