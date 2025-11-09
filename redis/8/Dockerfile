@@ -1,7 +1,7 @@
 # ----------------------------------
 # Environment: redis
 # ----------------------------------
-FROM    --platform=$TARGETOS/$TARGETARCH redis:7-alpine
+FROM    --platform=$TARGETOS/$TARGETARCH redis:8-alpine
 
 LABEL   author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
