@@ -17,7 +17,7 @@ RUN         apk update && apk upgrade && \
             tzdata \
             iproute2 \
             tini \
-            eudev \
+            eudev-libs \
             freetype \
             gcc \
             libstdc++ \
