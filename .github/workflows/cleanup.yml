@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/delete-package-versions@v5
         with:
-          num-old-versions-to-delete: 50
+          min-versions-to-keep: 50
           package-type: container
           package-name: bossdockerimages
           token: ${{ secrets.REGISTERY_TOKEN_2 }}
