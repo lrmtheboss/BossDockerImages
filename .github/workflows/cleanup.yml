@@ -12,4 +12,4 @@ jobs:
           num-old-versions-to-delete: 50
           package-type: container
           package-name: bossdockerimages
-          token: ${{ secrets.REGISTRY_TOKEN }}
+          token: ${{ secrets.REGISTERY_TOKEN_2 }}
