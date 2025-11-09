@@ -6,6 +6,9 @@ on:
 jobs:
   clean:
     runs-on: ubuntu-latest
+    concurrency:
+      group: "cleanup-bossdockerimages"
+      cancel-in-progress: false
     strategy:
       fail-fast: true
       matrix:
