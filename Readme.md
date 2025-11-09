@@ -52,8 +52,6 @@ MongoDB images for pterodactyl panel.
 
 NodeJS images for pterodactyl panel.
 
-* [20](/nodejs/20)
-  * `ghcr.io/lrmtheboss/bossdockerimages:nodejs_20`
 * [22](/nodejs/22)
   * `ghcr.io/lrmtheboss/bossdockerimages:nodejs_22`
 * [24](/nodejs/24)
@@ -80,10 +78,12 @@ Postgres images for pterodactyl panel.
   * `ghcr.io/lrmtheboss/bossdockerimages:postgres_16`
 * [17](/postgres/17)
   * `ghcr.io/lrmtheboss/bossdockerimages:postgres_17`
+* [18](/postgres/18)
+  * `ghcr.io/lrmtheboss/bossdockerimages:postgres_18`
 
 ### [Redis](/redis)
 
 Redis images for pterodactyl panel.
 
-* [7](/redis/6)
-  * `ghcr.io/lrmtheboss/bossdockerimages:redis_7`
+* [8](/redis/8)
+  * `ghcr.io/lrmtheboss/bossdockerimages:redis_8`
