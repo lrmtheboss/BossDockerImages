@@ -53,12 +53,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.REGISTRY_TOKEN }}
-      #- name: Extract Docker metadata
-      #  id: meta
-      #  uses: docker/metadata-action@v5
-      #  with:
-      #    images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-      #    tags: type=sha,format=long
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v6
@@ -72,6 +66,4 @@ jobs:
       - name: Sign the images with GitHub OIDC Token
         env:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
-          #TAGS: ${{ steps.meta.outputs.tags }}
-        #run: cosign sign --yes "${TAGS}@${DIGEST}"
         run: cosign sign --yes "ghcr.io/lrmtheboss/bossdockerimages:${{ inputs.image_name }}_${{ matrix.tag }}@${DIGEST}"
