@@ -5,6 +5,7 @@ updates:
     schedule:
       interval: "weekly"
   - package-ecosystem: "docker"
-    directory: "/" # Location of Dockerfile
+    directories:
+      - "*"
     schedule:
       interval: "weekly"
