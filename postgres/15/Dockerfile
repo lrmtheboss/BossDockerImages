@@ -1,7 +1,7 @@
 # ----------------------------------
 # Environment: Postgres DB
 # ----------------------------------
-FROM --platform=$TARGETOS/$TARGETARCH postgres:15-alpine
+FROM --platform=$TARGETOS/$TARGETARCH postgres:18-alpine
 
 LABEL author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
