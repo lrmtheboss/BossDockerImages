@@ -19,7 +19,7 @@ jobs:
       id-token: write
     uses: ./.github/workflows/BuildDeploy.yml
     with:
-      tags: "[8, 11, 17, 21]"
+      tags: "[8, 11, 17, 21, 25]"
       image_name: "java"
       folder: "java"
     secrets: inherit

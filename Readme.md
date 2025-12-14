@@ -22,6 +22,7 @@ Java images for pterodactyl panel.
 Recommend order in pterodactyl egg configuration:
 
 ```txt
+Java 25|ghcr.io/lrmtheboss/bossdockerimages:java_25
 Java 21|ghcr.io/lrmtheboss/bossdockerimages:java_21
 Java 17|ghcr.io/lrmtheboss/bossdockerimages:java_17
 Java 11|ghcr.io/lrmtheboss/bossdockerimages:java_11
