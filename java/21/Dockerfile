@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-alpine-musl:21
+FROM        --platform=$TARGETOS/$TARGETARCH bellsoft/liberica-openjdk-alpine-musl:25
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
