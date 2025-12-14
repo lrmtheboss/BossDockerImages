@@ -9,7 +9,8 @@ on:
       - main
     paths:
       - mongodb/**
-
+      - .github/workflows/mongodb.yml
+      - .github/workflows/BuildDeploy.yml
 jobs:
   call:
     permissions:

@@ -9,6 +9,8 @@ on:
       - main
     paths:
       - redis/**
+      - .github/workflows/redis.yml
+      - .github/workflows/BuildDeploy.yml
 jobs:
   call:
     permissions:

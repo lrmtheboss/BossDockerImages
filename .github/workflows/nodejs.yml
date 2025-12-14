@@ -8,6 +8,8 @@ on:
       - main
     paths:
       - nodejs/**
+      - .github/workflows/nodejs.yml
+      - .github/workflows/BuildDeploy.yml
 jobs:
   call:
     permissions:

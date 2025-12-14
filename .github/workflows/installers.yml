@@ -8,7 +8,8 @@ on:
       - main
     paths:
       - installers/**
-
+      - .github/workflows/installers.yml
+      - .github/workflows/BuildDeploy.yml
 jobs:
   call:
     permissions:

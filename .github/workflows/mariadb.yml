@@ -9,7 +9,8 @@ on:
       - main
     paths:
       - mariadb/**
-
+      - .github/workflows/mariadb.yml
+      - .github/workflows/BuildDeploy.yml
 jobs:
   call:
     permissions:
