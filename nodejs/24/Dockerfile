@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH node:24-alpine
+FROM        --platform=$TARGETOS/$TARGETARCH node:25-alpine
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
