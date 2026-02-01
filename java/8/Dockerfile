@@ -21,6 +21,7 @@ RUN         apk update && apk upgrade && \
             freetype \
             gcc \
             libstdc++ \
+            gcompat \
             && apk cache clean
 
 RUN         adduser -h /home/container -D -s /bin/bash container
