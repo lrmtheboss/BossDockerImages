@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH debian:bookworm-slim
+FROM        --platform=$TARGETOS/$TARGETARCH debian:trixie-slim
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
