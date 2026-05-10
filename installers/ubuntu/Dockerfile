@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH ubuntu:24.04
+FROM        --platform=$TARGETOS/$TARGETARCH ubuntu:26.04
 
 LABEL       author="Lucas Mcginnis" maintainer="lucas.mcginnis@lrmtheboss.com"
 
